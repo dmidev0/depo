@@ -1,4 +1,4 @@
-<a href="#" class="cart-icon">
+<button class="cart-icon" [disabled]="!cart.itemCount" appCartIcon>
   <svg class="cart-icon__icon" width="37" height="37" viewBox="0 0 37 37" fill="none" xmlns="http://www.w3.org/2000/svg">
     <g clip-path="url(#clip0-cart-icon)">
       <path fill-rule="evenodd" clip-rule="evenodd" d="M10.7916 32.3751C10.7916 30.6722 12.1721 29.2917 13.875 29.2917C15.5778 29.2917 16.9583 30.6722 16.9583 32.3751C16.9583 34.078 15.5778 35.4584 13.875 35.4584C12.1721 35.4584 10.7916 34.078 10.7916 32.3751Z" fill="white"></path>
@@ -11,5 +11,5 @@
       </clipPath>
     </defs>
   </svg>
-  <span class="cart-icon__count" *ngIf="counter">{{counter}}</span>
-</a>
+  <span class="cart-icon__count" [class.cart-icon__count_show]="cart.itemCount">{{cart.itemCount}}</span>
+</button>

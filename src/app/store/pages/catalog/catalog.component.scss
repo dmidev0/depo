@@ -1,10 +1,71 @@
 @import "../../styles/common";
 
+$catalogBgWidth: 51%;
+
 .catalog {
-  background: $colorBg;
-  color: $colorText;
-  height: 100%;
-  padding: 0 48px 0 90px;
+  font-family: $fontR;
+  line-height: 1.3;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  transform: translateX(51%);
+  transition: transform .8s cubic-bezier(0.84, 0.13, 0.2, 0.96);
+
+  &_loaded {
+    transform: none;
+  }
+
+  &__bg {
+    position: absolute;
+    left: $catalogBgWidth;
+    width: $catalogBgWidth;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    transition: left .8s cubic-bezier(0.84, 0.13, 0.2, 0.96) .4s;
+    height: 100%;
+
+    .catalog_loaded & {
+      left: 0;
+    }
+
+    &::before {
+      @extend %_pseudo;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.8);
+    }
+  }
+
+  &__brand {
+    position: absolute;
+    color: #fff;
+    font-family: $fontH;
+    margin: 0;
+    padding: 141px 113px;
+    font-size: 60px;
+    width: 100%;
+  }
+
+  &__type {
+    font-family: $fontR;
+    display: block;
+    font-size: 18px;
+    margin-bottom: 6px;
+  }
+
+  &__content {
+    position: absolute;
+    left: $catalogBgWidth;
+    right: 0;
+    height: 100%;
+    background: $colorBg;
+    color: $colorText;
+    padding: 0 48px 0 90px;
+  }
 
   &__header {
     display: flex;

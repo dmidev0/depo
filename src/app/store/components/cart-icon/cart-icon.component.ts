@@ -1,18 +1,12 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
+import {Cart} from '../../models/cart.model';
 
 @Component({
   selector: 'app-cart-icon',
   templateUrl: './cart-icon.component.html',
   styleUrls: ['./cart-icon.component.scss']
 })
-export class CartIconComponent implements OnInit {
+export class CartIconComponent {
 
-  counter = 0;
-
-  constructor() {
-  }
-
-  ngOnInit() {
-  }
-
+  constructor(public cart: Cart) {}
 }

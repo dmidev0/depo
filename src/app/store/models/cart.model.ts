@@ -1,11 +1,13 @@
 import {Injectable} from '@angular/core';
 import {Product} from './product.model';
+import {Subject} from 'rxjs';
 
 @Injectable()
 export class Cart {
-  public lines: CartLine[];
+  public lines: CartLine[] = [];
   public itemCount = 0;
   public cartPrice = 0;
+  private isRecalculate = new Subject<null>();
 
   addLine(product: Product, quantity: number = 1) {
     const line = this.lines.find(l => l.product.id === product.id);
@@ -37,9 +39,14 @@ export class Cart {
     this.cartPrice = 0;
   }
 
+  recalculateEvent() {
+    return this.isRecalculate.asObservable();
+  }
+
   private recalculate() {
     this.itemCount = 0;
     this.cartPrice = 0;
+    this.isRecalculate.next();
     this.lines.forEach(l => {
       this.itemCount += l.quantity;
       this.cartPrice += l.lineTotal;

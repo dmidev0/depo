@@ -7,6 +7,7 @@ export class StaticDataSource {
   private stores: Store[] = [{
     slug: 'betmen-i-uzbeki',
     type: 'Ресторан',
+    bg: '/assets/tmp/bg.jpg',
     name: 'Бэтмен и Узбеки',
     products: [
       {
