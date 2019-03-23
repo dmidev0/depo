@@ -1,0 +1,23 @@
+.cart {
+  height: 100%;
+  background: #000;
+
+  &__controls {
+    text-align: center;
+    margin: 20px 0;
+  }
+
+  &__button {
+    width: 256px;
+    height: 78px;
+    border-radius: 39px;
+    border: 1px solid #fff;
+    text-transform: uppercase;
+    color: #fff;
+    background: none;
+    outline: none;
+    margin: 0 22px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+}

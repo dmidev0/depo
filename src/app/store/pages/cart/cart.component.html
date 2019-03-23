@@ -1,0 +1,12 @@
+<div class="cart">
+  <app-store-header title="Корзина" extra="{{cart.itemCount | i18nPlural: dishMessages}}"></app-store-header>
+  <div class="cart__list">
+    <swiper [config]="sliderConfig" [index]="startIndex">
+      <app-cart-item [cartItem]="item" *ngFor="let item of cart.getLines()"></app-cart-item>
+    </swiper>
+  </div>
+  <div class="cart__controls">
+    <button class="cart__button">Отмена</button>
+    <button class="cart__button">Оплатить</button>
+  </div>
+</div>

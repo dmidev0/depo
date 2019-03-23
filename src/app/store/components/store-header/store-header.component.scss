@@ -1,0 +1,47 @@
+@import "../../styles/common";
+
+.store-header {
+  color: #fff;
+  padding: 48px 82px 48px 55px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__title {
+    margin: 0;
+    font-size: 55px;
+    font-weight: 600;
+    display: inline-block;
+    position: relative;
+  }
+
+  &__sup {
+    position: absolute;
+    font-size: 18px;
+    font-family: $fontR;
+    top: 2px;
+    left: 100%;
+    white-space: nowrap;
+  }
+
+  &__link {
+    color: #fff;
+    font-family: $fontR;
+    font-size: 18px;
+
+    & + & {
+      margin-left: 90px;
+    }
+
+    &-label {
+      display: inline-block;
+      margin-right: 20px;
+      vertical-align: middle;
+    }
+
+    &-icon {
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+}

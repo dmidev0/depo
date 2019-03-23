@@ -1,1 +1,6 @@
 @import "./styles/fonts";
+@import '~swiper/dist/css/swiper.min.css';
+
+.cart swiper > .swiper.s-wrapper .swiper-wrapper .swiper-slide {
+  width: auto;
+}

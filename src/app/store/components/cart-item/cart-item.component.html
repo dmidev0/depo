@@ -1,0 +1,17 @@
+<div class="cart-item">
+  <div class="cart-item__wrapper">
+    <div class="cart-item__image" [style.backgroundImage]="'url(' + cartItem.product.image + ')'"></div>
+    <div class="cart-item__name">{{cartItem.product.shortName}}</div>
+    <div class="cart-item__count">
+      <div class="cart-item__count-label">Количество</div>
+      <app-counter [value]="cartItem.quantity" (changed)="onChange($event)"></app-counter>
+    </div>
+    <a href="#" class="cart-item__remove" (click)="remove($event)">
+      <span class="cart-item__remove-label">Удалить</span>
+      <svg class="cart-item__remove-icon" viewBox="0 0 11 11" xmlns="http://www.w3.org/2000/svg">
+        <path d="M2 2L8.62838 8.62838" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        <path d="M2 8.62842L8.62838 2.00004" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+      </svg>
+    </a>
+  </div>
+</div>

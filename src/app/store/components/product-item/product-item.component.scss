@@ -43,6 +43,11 @@
     width: 28px;
     height: 28px;
     display: block;
+    transition: transform .4s ease;
+
+    &:hover {
+      transform: translateY(-50%) rotate(180deg);
+    }
 
     &::before, &::after {
       @extend %_pseudo;

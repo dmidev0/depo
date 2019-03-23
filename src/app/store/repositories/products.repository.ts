@@ -1,14 +1,14 @@
 import {Injectable} from '@angular/core';
-import {StaticDataSource} from '../datasource/static.datasource';
-import {Observable} from 'rxjs';
 import {map} from 'rxjs/operators';
 import {ProductGroup} from '../models/product-group.model';
 import {Store} from '../models/store.model';
+import {ProductDataSourcing} from '../datasource/product.datasourcing';
+import {Observable} from 'rxjs';
 
 @Injectable()
 export class ProductsRepository {
 
-  constructor(private dataSource: StaticDataSource) {}
+  constructor(private dataSource: ProductDataSourcing) {}
 
   getCatalog(storeName): Observable<Store> {
     return this.dataSource.getCatalog(storeName).pipe(

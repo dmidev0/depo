@@ -1,0 +1,54 @@
+@import "../../styles/common";
+
+.cart-item {
+  width: 25vw;
+  color: #fff;
+  text-align: center;
+
+  &__wrapper {
+    padding: 0 10px;
+  }
+
+  &__image {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    height: calc(100vh - 600px);
+    border-radius: 10px;
+  }
+
+  &__name {
+    font-size: 30px;
+    margin: 27px 0;
+  }
+
+  &__count {
+    &-label {
+      font-family: $fontR;
+      color: #929292;
+      font-size: 10px;
+      margin: 5px 0;
+    }
+  }
+
+  &__remove {
+    display: inline-block;
+    margin: 20px 0;
+
+    &-label {
+      display: inline-block;
+      vertical-align: middle;
+      font-family: $fontR;
+      color: #fff;
+      margin: 0 13px;
+    }
+
+    &-icon {
+      width: 11px;
+      height: 11px;
+      fill: none;
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+}
