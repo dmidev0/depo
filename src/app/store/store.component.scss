@@ -1,0 +1,14 @@
+@import "styles/common";
+
+.store {
+  font-family: $fontR;
+  line-height: 1.3;
+
+  &__catalog {
+    position: fixed;
+    left: 51%;
+    right: 0;
+    top: 0;
+    bottom: 0;
+  }
+}

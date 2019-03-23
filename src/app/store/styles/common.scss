@@ -1,0 +1,21 @@
+$colorBg: #000;
+$colorText: #fff;
+$fontR: 'Circe Regular';
+$fontH: 'Times New Roman';
+$sizeFontR: 16px;
+$sizeFontH: 20px;
+
+%_pseudo {
+  position: absolute;
+  display: block;
+  content: '';
+}
+
+%_clearfix {
+  &::after {
+    content: '';
+    display: block;
+    clear: both;
+    visibility: hidden;
+  }
+}

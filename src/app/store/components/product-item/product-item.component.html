@@ -1,0 +1,11 @@
+<div class="product-item">
+  <div class="product-item__content">
+    <div class="product-item__header">
+      <div class="product-item__name">{{product.name}}</div>
+      <div class="product-item__weight">{{product.weight}}</div>
+      <div class="product-item__price">{{product.price | currency: 'RUB': 'symbol': "1.0-0"}}</div>
+    </div>
+    <div class="product-item__description">{{product.description}}</div>
+  </div>
+  <a href="#" class="product-item__add" aria-label="add to cart"></a>
+</div>

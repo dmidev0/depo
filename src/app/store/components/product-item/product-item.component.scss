@@ -1,0 +1,61 @@
+@import "../../styles/common";
+
+.product-item {
+  margin-top: 38px;
+  position: relative;
+
+  &__content {
+    width: 78%;
+  }
+
+  &__header {
+    position: relative;
+    color: #ababab;
+    padding-right: 110px;
+  }
+
+  &__price {
+    position: absolute;
+    right: 0;
+    bottom: 1px;
+    font-size: 13px;
+  }
+
+  &__weight {
+    right: 66px;
+    position: absolute;
+    bottom: 1px;
+    font-size: 13px;
+  }
+
+  &__description {
+    font-size: 10px;
+    color: #888;
+  }
+
+  &__add {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    display: block;
+
+    &::before, &::after {
+      @extend %_pseudo;
+      width: 12px;
+      height: 2px;
+      background: #fff;
+      transform-origin: center center;
+      left: 6px;
+      top: 11px;
+    }
+
+    &::after {
+      transform: rotate(90deg);
+    }
+  }
+}
