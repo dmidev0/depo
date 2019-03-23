@@ -30,6 +30,46 @@ export class StaticDataSource {
           'stew from eggplants stewed with onions, tomatoes, bell peppers, carrots and greens'
       },
       {
+        id: 'product5',
+        name: 'Аджапсандали / AjapSandali',
+        weight: '200 г.',
+        price: 430,
+        category: 'Холодные овощные закуски',
+        description: 'овощное рагу из баклажанов, ' +
+          'тушенных с луком, помидорами, болгарским перцем, морковью и зеленью / vegetable ' +
+          'stew from eggplants stewed with onions, tomatoes, bell peppers, carrots and greens'
+      },
+      {
+        id: 'product6',
+        name: 'Аджапсандали / AjapSandali',
+        weight: '200 г.',
+        price: 430,
+        category: 'Холодные овощные закуски',
+        description: 'овощное рагу из баклажанов, ' +
+          'тушенных с луком, помидорами, болгарским перцем, морковью и зеленью / vegetable ' +
+          'stew from eggplants stewed with onions, tomatoes, bell peppers, carrots and greens'
+      },
+      {
+        id: 'product7',
+        name: 'Аджапсандали / AjapSandali',
+        weight: '200 г.',
+        price: 430,
+        category: 'Холодные овощные закуски',
+        description: 'овощное рагу из баклажанов, ' +
+          'тушенных с луком, помидорами, болгарским перцем, морковью и зеленью / vegetable ' +
+          'stew from eggplants stewed with onions, tomatoes, bell peppers, carrots and greens'
+      },
+      {
+        id: 'product8',
+        name: 'Аджапсандали / AjapSandali',
+        weight: '200 г.',
+        price: 430,
+        category: 'Холодные овощные закуски',
+        description: 'овощное рагу из баклажанов, ' +
+          'тушенных с луком, помидорами, болгарским перцем, морковью и зеленью / vegetable ' +
+          'stew from eggplants stewed with onions, tomatoes, bell peppers, carrots and greens'
+      },
+      {
         id: 'product3',
         name: 'Красное лобио с орехами и капустой по-гурийски/Red lobio with nuts and cabbage in Guria',
         weight: '200 г.',

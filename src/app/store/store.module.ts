@@ -11,6 +11,7 @@ import {Cart} from './models/cart.model';
 import { ProductItemComponent } from './components/product-item/product-item.component';
 import localeRu from '@angular/common/locales/ru';
 import {Ng2SlideDownModule} from 'ng2-slide-down';
+import {NgScrollbarModule} from 'ngx-scrollbar';
 
 registerLocaleData(localeRu);
 
@@ -27,7 +28,8 @@ const routing = RouterModule.forChild([
   imports: [
     CommonModule,
     routing,
-    Ng2SlideDownModule
+    Ng2SlideDownModule,
+    NgScrollbarModule
   ],
   providers: [
     ProductsRepository,
