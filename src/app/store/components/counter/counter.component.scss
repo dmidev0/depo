@@ -56,3 +56,11 @@
     font-size: 40px;
   }
 }
+
+@media screen and (max-width: $sizeDesktop) {
+  .counter {
+    &__value {
+      font-size: 35px;
+    }
+  }
+}
