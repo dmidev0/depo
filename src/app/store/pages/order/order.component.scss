@@ -1,0 +1,65 @@
+@import "../../styles/common";
+
+.order {
+  height: 100%;
+  background: #000;
+  color: #fff;
+  text-align: center;
+  font-family: $fontR;
+
+  &__label {
+    display: block;
+    font-size: 22px;
+    padding: 50px 0 30px;
+  }
+
+  &__phone {
+    &-control {
+      font-size: 50px;
+      font-weight: bold;
+      text-align: center;
+      background: none;
+      border: none;
+      border-radius: 0;
+      color: #fff;
+    }
+  }
+
+  &__payment {
+    &-type {
+      display: inline-block;
+
+      & + & {
+        margin-left: 39px;
+      }
+    }
+
+    &-button {
+      display: block;
+      background: #0C0C0C;
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      outline: none;
+      width: 335px;
+      height: 253px;
+      cursor: pointer;
+
+      &:hover {
+        transition: background-color .5s ease;
+        background: #2b2b2b;
+      }
+    }
+
+    &-systems {
+      width: 280px;
+      margin-top: 36px;
+    }
+
+    &-label {
+      display: block;
+      font-size: 15px;
+      padding-top: 45px;
+    }
+  }
+}

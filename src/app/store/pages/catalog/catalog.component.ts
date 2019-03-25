@@ -1,6 +1,7 @@
 import {AfterViewInit, Component} from '@angular/core';
 import {Store} from '../../models/store.model';
 import {ActivatedRoute} from '@angular/router';
+import {LastStoreService} from '../../services/last-store.service';
 
 @Component({
   selector: 'app-catalog',
@@ -12,8 +13,9 @@ export class CatalogComponent implements AfterViewInit {
   store: Store;
   isLoaded = false;
 
-  constructor(private activatedRoute: ActivatedRoute) {
+  constructor(private activatedRoute: ActivatedRoute, lastStoreService: LastStoreService) {
     this.store = activatedRoute.snapshot.data.store;
+    lastStoreService.setStore(this.store.slug);
   }
 
   activeCategory = '';

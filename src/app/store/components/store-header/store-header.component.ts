@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {SCHEMA_URL} from '../../constants';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-store-header',
@@ -15,10 +16,20 @@ export class StoreHeaderComponent implements OnInit {
   @Input()
   extra: string;
 
-  constructor() {
+  @Input()
+  backUrl: string;
+
+  constructor(private router: Router) {
   }
 
   ngOnInit() {
   }
 
+  goBack(e) {
+    e.preventDefault();
+    if (this.backUrl) {
+      this.router.navigateByUrl(this.backUrl);
+      return;
+    }
+  }
 }

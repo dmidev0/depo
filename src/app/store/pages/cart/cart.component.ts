@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {Cart} from '../../models/cart.model';
 import {SwiperConfigInterface} from 'ngx-swiper-wrapper';
+import {LastStoreService} from '../../services/last-store.service';
 
 @Component({
   selector: 'app-cart',
@@ -18,7 +19,10 @@ export class CartComponent {
     slidesPerView: 'auto',
   };
 
-  constructor(public cart: Cart) {
+  readonly lastStoreUrl: string;
+
+  constructor(public cart: Cart, lastStoreService: LastStoreService) {
+    this.lastStoreUrl = lastStoreService.getStoreUrl();
   }
 
   get startIndex() {
