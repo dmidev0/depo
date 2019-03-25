@@ -46,3 +46,13 @@
     }
   }
 }
+
+@media screen and (max-width: $sizeDesktop) {
+  .store-header {
+    padding-top: 25px;
+
+    &__title {
+      font-size: 45px;
+    }
+  }
+}

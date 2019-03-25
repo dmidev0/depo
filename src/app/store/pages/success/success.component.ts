@@ -1,15 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import {Component} from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-success',
   templateUrl: './success.component.html',
   styleUrls: ['./success.component.scss']
 })
-export class SuccessComponent implements OnInit {
+export class SuccessComponent {
 
-  constructor() { }
+  orderId: number;
 
-  ngOnInit() {
+  constructor(private activatedRoute: ActivatedRoute) {
+    this.orderId = activatedRoute.snapshot.params.id;
   }
-
 }

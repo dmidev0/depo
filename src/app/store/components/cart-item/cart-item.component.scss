@@ -52,3 +52,16 @@
     }
   }
 }
+
+@media screen and (max-width: $sizeDesktop) {
+  .cart-item {
+    &__image {
+      height: calc(100vh - 530px);
+    }
+
+    &__name {
+      font-size: 25px;
+      margin: 20px 0;
+    }
+  }
+}

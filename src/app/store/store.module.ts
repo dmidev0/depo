@@ -11,21 +11,25 @@ import localeRu from '@angular/common/locales/ru';
 import {Ng2SlideDownModule} from 'ng2-slide-down';
 import {NgScrollbarModule} from 'ngx-scrollbar';
 import {CartIconDirective} from './components/cart-icon/cart-icon.directive';
-import { CartComponent } from './pages/cart/cart.component';
-import { StoreHeaderComponent } from './components/store-header/store-header.component';
+import {CartComponent} from './pages/cart/cart.component';
+import {StoreHeaderComponent} from './components/store-header/store-header.component';
 import {CartRepositoring} from './repositories/cart.repositoring';
 import {CartLocalStorageRepository} from './repositories/cart-local-storage.repository';
 import {ProductDataSourcing} from './datasource/product.datasourcing';
 import {ProductStaticDataSource} from './datasource/product-static.datasource';
 import {SwiperModule} from 'ngx-swiper-wrapper';
-import { CartItemComponent } from './components/cart-item/cart-item.component';
-import { CounterComponent } from './components/counter/counter.component';
-import { OrderComponent } from './pages/order/order.component';
+import {CartItemComponent} from './components/cart-item/cart-item.component';
+import {CounterComponent} from './components/counter/counter.component';
+import {OrderComponent} from './pages/order/order.component';
 import {NgxMaskModule} from 'ngx-mask';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {FilledCartGuard} from './guards/filled-cart.guard';
 import {LastStoreService} from './services/last-store.service';
-import { SuccessComponent } from './pages/success/success.component';
+import {SuccessComponent} from './pages/success/success.component';
+import {OrderRepository} from './repositories/order.repository';
+import {OrderDataSourcing} from './datasource/order.datasourcing';
+import {OrderMockDataSource} from './datasource/order-mock.datasource';
+import {Order} from './models/order.model';
 
 registerLocaleData(localeRu);
 
@@ -44,6 +48,10 @@ const routing = RouterModule.forChild([
     path: 'order',
     component: OrderComponent,
     canActivate: [FilledCartGuard],
+  },
+  {
+    path: 'success/:id',
+    component: SuccessComponent
   }
 ]);
 
@@ -76,6 +84,8 @@ const routing = RouterModule.forChild([
     Cart,
     FilledCartGuard,
     LastStoreService,
+    Order,
+    OrderRepository,
     {
       provide: ProductDataSourcing,
       useClass: ProductStaticDataSource,
@@ -87,6 +97,10 @@ const routing = RouterModule.forChild([
     {
       provide: CartRepositoring,
       useClass: CartLocalStorageRepository,
+    },
+    {
+      provide: OrderDataSourcing,
+      useClass: OrderMockDataSource,
     }
   ]
 })

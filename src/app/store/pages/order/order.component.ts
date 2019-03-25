@@ -1,6 +1,9 @@
 import {Component} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {PAYMENT_TYPE_CONTACTLESS, PAYMENT_TYPE_LINK} from '../../constants';
+import {Order} from '../../models/order.model';
+import {OrderRepository} from '../../repositories/order.repository';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-order',
@@ -13,22 +16,29 @@ export class OrderComponent {
   paymentTypeContactLess = PAYMENT_TYPE_CONTACTLESS;
   paymentTypeLink = PAYMENT_TYPE_LINK;
 
-  constructor(fb: FormBuilder) {
+  constructor(fb: FormBuilder,
+              private orderRepository: OrderRepository,
+              private order: Order,
+              private router: Router) {
     this.form = fb.group({
       phone: ['', Validators.compose([Validators.required, Validators.pattern(/^\d{10}$/)])],
       paymentType: ['']
     });
   }
 
-  setPaymentType(value) {
+  async setPaymentType(value) {
     this.form.controls.paymentType.setValue(value);
-    this.submit();
+    await this.submit();
   }
 
-  submit() {
-    console.log(this.form.value);
+  async submit() {
     if (this.form.valid) {
-      console.log('submit');
+      this.order.phone = this.form.value.phone;
+      this.order.paymentType = this.form.value.paymentType;
+      const order = await this.orderRepository.saveOrder(this.order);
+      const orderId = order.id;
+      this.order.clear();
+      this.router.navigateByUrl(`/store/success/${orderId}`);
     }
   }
 }

@@ -1,3 +1,5 @@
+@import "../../styles/common";
+
 .cart {
   height: 100%;
   background: #000;
@@ -19,5 +21,15 @@
     margin: 0 22px;
     font-size: 20px;
     cursor: pointer;
+  }
+}
+
+@media screen and (max-width: $sizeDesktop) {
+  .cart {
+    &__button {
+      font-size: 18px;
+      width: 220px;
+      height: 60px;
+    }
   }
 }

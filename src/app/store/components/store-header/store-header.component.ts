@@ -19,6 +19,9 @@ export class StoreHeaderComponent implements OnInit {
   @Input()
   backUrl: string;
 
+  @Input()
+  showBack = true;
+
   constructor(private router: Router) {
   }
 
