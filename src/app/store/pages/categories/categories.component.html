@@ -1,0 +1,13 @@
+<div class="categories">
+  <app-store-header [title]="'Категории'"></app-store-header>
+  <div class="categories__content">
+    <div class="categories__list">
+      <div class="categories__item" *ngFor="let item of filtered">
+        <a [routerLink]="'/store/category/' + item.id" class="categories__wrapper">
+          <div class="categories__photo" [style.backgroundImage]="'url(' + item.photo + ')'"></div>
+          <div class="categories__name">{{item.name}}</div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

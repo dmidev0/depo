@@ -30,10 +30,20 @@ import {OrderRepository} from './repositories/order.repository';
 import {OrderDataSourcing} from './datasource/order.datasourcing';
 import {OrderMockDataSource} from './datasource/order-mock.datasource';
 import {Order} from './models/order.model';
+import { CategoriesComponent } from './pages/categories/categories.component';
+import {CategoryDataSourcing} from './datasource/category.datasourcing';
+import {CategoryStaticDataSource} from './datasource/category-static.datasource';
+import {CategoriesRepository} from './repositories/categories.repository';
+import {CategoriesResolver} from './resolvers/categories.resolver';
 
 registerLocaleData(localeRu);
 
 const routing = RouterModule.forChild([
+  {
+    path: 'categories',
+    component: CategoriesComponent,
+    resolve: {categories: CategoriesResolver},
+  },
   {
     path: 'catalog/:id',
     component: CatalogComponent,
@@ -67,6 +77,7 @@ const routing = RouterModule.forChild([
     CounterComponent,
     OrderComponent,
     SuccessComponent,
+    CategoriesComponent,
   ],
   imports: [
     CommonModule,
@@ -86,6 +97,8 @@ const routing = RouterModule.forChild([
     LastStoreService,
     Order,
     OrderRepository,
+    CategoriesRepository,
+    CategoriesResolver,
     {
       provide: ProductDataSourcing,
       useClass: ProductStaticDataSource,
@@ -101,6 +114,10 @@ const routing = RouterModule.forChild([
     {
       provide: OrderDataSourcing,
       useClass: OrderMockDataSource,
+    },
+    {
+      provide: CategoryDataSourcing,
+      useClass: CategoryStaticDataSource,
     }
   ]
 })
