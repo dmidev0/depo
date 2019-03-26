@@ -4,34 +4,4 @@
   min-height: 100%;
   background: #000;
   color: #fff;
-
-  &__content {
-    @extend %_container;
-  }
-
-  &__list {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0 -9px;
-  }
-
-  &__item {
-    width: 25%;
-    padding: 0 9px;
-  }
-
-  &__photo {
-    padding-top: 101%;
-    background-position: center center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    border-radius: 10px;
-  }
-
-  &__name {
-    color: #fff;
-    font-size: 28px;
-    text-align: center;
-    margin: 28px 0 66px;
-  }
 }

@@ -11,4 +11,8 @@ export class CategoriesRepository {
   getAll(): Observable<Category[]> {
     return this.dataSource.getAll();
   }
+
+  getBySlug(slug): Observable<Category> {
+    return this.dataSource.getBySlug(slug);
+  }
 }

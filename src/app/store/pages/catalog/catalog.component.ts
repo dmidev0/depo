@@ -2,6 +2,7 @@ import {AfterViewInit, Component} from '@angular/core';
 import {Store} from '../../models/store.model';
 import {ActivatedRoute} from '@angular/router';
 import {LastStoreService} from '../../services/last-store.service';
+import {ProductGroup} from '../../models/product-group.model';
 
 @Component({
   selector: 'app-catalog',
@@ -11,10 +12,13 @@ import {LastStoreService} from '../../services/last-store.service';
 export class CatalogComponent implements AfterViewInit {
 
   store: Store;
+  groups: ProductGroup[] = [];
   isLoaded = false;
 
   constructor(private activatedRoute: ActivatedRoute, lastStoreService: LastStoreService) {
     this.store = activatedRoute.snapshot.data.store;
+    this.groups = activatedRoute.snapshot.data.groups;
+    console.log(this.groups);
     lastStoreService.setStore(this.store.slug);
   }
 

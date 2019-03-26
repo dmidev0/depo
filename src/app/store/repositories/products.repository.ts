@@ -1,7 +1,6 @@
 import {Injectable} from '@angular/core';
 import {map} from 'rxjs/operators';
 import {ProductGroup} from '../models/product-group.model';
-import {Store} from '../models/store.model';
 import {ProductDataSourcing} from '../datasource/product.datasourcing';
 import {Observable} from 'rxjs';
 
@@ -10,20 +9,19 @@ export class ProductsRepository {
 
   constructor(private dataSource: ProductDataSourcing) {}
 
-  getCatalog(storeName): Observable<Store> {
-    return this.dataSource.getCatalog(storeName).pipe(
-      map(store => {
+  getGroups(storeSlug): Observable<ProductGroup[]> {
+    return this.dataSource.getByStoreSlug(storeSlug).pipe(
+      map(products => {
         const groupsMap = new Map();
-        store.products.forEach(p => {
-          const group = groupsMap.get(p.category);
-          const products = group ? group.products : [];
-          groupsMap.set(p.category, {
-            category: p.category,
-            products: [...products, p],
+        products.forEach(product => {
+          const group = groupsMap.get(product.category);
+          const groupProducts = group ? group.products : [];
+          groupsMap.set(product.category, {
+            category: product.category,
+            products: [...groupProducts, product],
           } as ProductGroup);
         });
-        store.groups = Array.from(groupsMap.values());
-        return store;
+        return Array.from(groupsMap.values());
       })
     );
   }

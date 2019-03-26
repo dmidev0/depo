@@ -14,7 +14,6 @@ export class CartComponent {
 
   sliderConfig: SwiperConfigInterface = {
     direction: 'horizontal',
-    mousewheel: true,
     centeredSlides: true,
     slidesPerView: 'auto',
   };

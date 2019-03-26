@@ -7,48 +7,61 @@ import {Observable, of} from 'rxjs';
 export class CategoryStaticDataSource extends CategoryDataSourcing {
   private categories: Category[] = [
     {
-      id: 'kavkazskaya',
+      slug: 'kavkazskaya',
       name: 'Кавказская кухня',
-      photo: '/assets/tmp/categories/1.jpg'
+      photo: '/assets/tmp/categories/1.jpg',
+      bg: '/assets/tmp/categories/1-bg.jpg',
     },
     {
-      id: 'aziatskaya',
+      slug: 'aziatskaya',
       name: 'Азиатская кухня',
-      photo: '/assets/tmp/categories/2.jpg'
+      photo: '/assets/tmp/categories/2.jpg',
+      bg: '/assets/tmp/categories/1-bg.jpg',
     },
     {
-      id: 'evropejskaya',
+      slug: 'evropejskaya',
       name: 'Европейская кухня',
-      photo: '/assets/tmp/categories/3.jpg'
+      photo: '/assets/tmp/categories/3.jpg',
+      bg: '/assets/tmp/categories/1-bg.jpg',
     },
     {
-      id: 'panaziatskaya',
+      slug: 'panaziatskaya',
       name: 'Паназиатская кухня',
-      photo: '/assets/tmp/categories/4.jpg'
+      photo: '/assets/tmp/categories/4.jpg',
+      bg: '/assets/tmp/categories/1-bg.jpg',
     },
     {
-      id: 'cat5',
+      slug: 'cat5',
       name: 'Другая кухня',
-      photo: '/assets/tmp/categories/5.jpg'
+      photo: '/assets/tmp/categories/5.jpg',
+      bg: '/assets/tmp/categories/1-bg.jpg',
     },
     {
-      id: 'cat6',
+      slug: 'cat6',
       name: 'Другая кухня',
-      photo: '/assets/tmp/categories/6.jpg'
+      photo: '/assets/tmp/categories/6.jpg',
+      bg: '/assets/tmp/categories/1-bg.jpg',
     },
     {
-      id: 'cat7',
+      slug: 'cat7',
       name: 'Другая кухня',
-      photo: '/assets/tmp/categories/7.jpg'
+      photo: '/assets/tmp/categories/7.jpg',
+      bg: '/assets/tmp/categories/1-bg.jpg',
     },
     {
-      id: 'cat8',
+      slug: 'cat8',
       name: 'Другая кухня',
-      photo: '/assets/tmp/categories/8.jpg'
+      photo: '/assets/tmp/categories/8.jpg',
+      bg: '/assets/tmp/categories/1-bg.jpg',
     },
   ];
 
   getAll(): Observable<Category[]> {
     return of(this.categories);
+  }
+
+  getBySlug(slug): Observable<Category> {
+    const category = this.categories.find(c => c.slug === slug);
+    return of(category);
   }
 }

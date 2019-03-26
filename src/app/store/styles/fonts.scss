@@ -63,3 +63,25 @@
   font-weight: 800;
   font-style: normal;
 }
+
+@font-face {
+  font-family: 'Georgia Regular';
+  src: url('/assets/fonts/Georgia/GeorgiaRegular/GeorgiaRegular.eot');
+  src: local('Georgia'), local('GeorgiaRegular'),
+  url('/assets/fonts/Circe/GeorgiaRegular/GeorgiaRegular.eot?#iefix') format('embedded-opentype'),
+  url('/assets/fonts/Circe/GeorgiaRegular/GeorgiaRegular.woff') format('woff'),
+  url('/assets/fonts/Circe/GeorgiaRegular/GeorgiaRegular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Georgia Bold';
+  src: url('/assets/fonts/Georgia/GeorgiaBold/GeorgiaBold.eot');
+  src: local('Georgia'), local('GeorgiaBold'),
+  url('/assets/fonts/Circe/GeorgiaBold/GeorgiaBold.eot?#iefix') format('embedded-opentype'),
+  url('/assets/fonts/Circe/GeorgiaBold/GeorgiaBold.woff') format('woff'),
+  url('/assets/fonts/Circe/GeorgiaBold/GeorgiaBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}

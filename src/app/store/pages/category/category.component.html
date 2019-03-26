@@ -1,0 +1,25 @@
+<div class="category">
+  <div class="category__header" [style.backgroundImage]="'url(' + category.bg + ')'">
+    <app-store-header [title]="category.name" [backUrl]="'/store/categories'"></app-store-header>
+    <div class="category__stores">
+      <div class="category__stores-wrapper">
+        <div class="category__stores-count">{{stores.length}}</div>
+        <div class="category__stores-label">{{stores.length | i18nPlural: storesMessages}}</div>
+      </div>
+    </div>
+  </div>
+  <app-search-string (changed)="filter($event)"></app-search-string>
+  <div class="grid">
+    <div class="grid__content">
+      <div class="grid__list">
+        <div class="grid__item" *ngFor="let item of filtered">
+          <!--<a [routerLink]="'/store/catalog/' + item.slug" class="grid__wrapper">-->
+          <a [routerLink]="'/store/catalog/betmen-i-uzbeki'" class="grid__wrapper">
+            <div class="grid__photo" [style.backgroundImage]="'url(' + item.logo + ')'"></div>
+            <div class="grid__name">{{item.name}}</div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

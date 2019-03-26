@@ -7,4 +7,5 @@ export interface Product {
   category: string;
   description: string;
   image: string;
+  store?: string;
 }

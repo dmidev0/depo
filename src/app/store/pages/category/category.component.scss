@@ -1,0 +1,43 @@
+@import "../../styles/common";
+
+.category {
+  min-height: 100%;
+  background: #000;
+  color: #fff;
+
+  &__header {
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 340px;
+    box-shadow:0 0 0 200px rgba(22, 22, 22, .7) inset;
+    margin-bottom: 35px;
+  }
+
+  &__stores {
+    @extend %_container;
+    padding-top: 30px;
+
+    &-wrapper {
+      position: relative;
+      display: inline-block;
+    }
+
+    &-count {
+      font-family: $fontHB;
+      font-size: 115px;
+      line-height: .55;
+    }
+
+    &-label {
+      font-family: $fontR;
+      position: absolute;
+      top: 0;
+      left: 100%;
+    }
+  }
+
+  &__content {
+    @extend %_container;
+  }
+}

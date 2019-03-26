@@ -1,6 +1,11 @@
 @import "./styles/fonts";
 @import '~swiper/dist/css/swiper.min.css';
+@import "./styles/grid";
 
 .cart swiper > .swiper.s-wrapper .swiper-wrapper .swiper-slide {
   width: auto;
+}
+
+.categories {
+  background: red;
 }

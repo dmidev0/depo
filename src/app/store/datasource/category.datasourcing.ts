@@ -5,4 +5,6 @@ import {Category} from '../models/category.model';
 @Injectable()
 export abstract class CategoryDataSourcing {
   abstract getAll(): Observable<Category[]>;
+
+  abstract getBySlug(slug): Observable<Category>;
 }

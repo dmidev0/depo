@@ -1,13 +1,15 @@
 <div class="categories">
   <app-store-header [title]="'Категории'"></app-store-header>
   <app-search-string (changed)="filter($event)"></app-search-string>
-  <div class="categories__content">
-    <div class="categories__list">
-      <div class="categories__item" *ngFor="let item of filtered">
-        <a [routerLink]="'/store/category/' + item.id" class="categories__wrapper">
-          <div class="categories__photo" [style.backgroundImage]="'url(' + item.photo + ')'"></div>
-          <div class="categories__name">{{item.name}}</div>
-        </a>
+  <div class="grid">
+    <div class="grid__content">
+      <div class="grid__list">
+        <div class="grid__item" *ngFor="let item of filtered">
+          <a [routerLink]="'/store/category/' + item.slug" class="grid__wrapper">
+            <div class="grid__photo" [style.backgroundImage]="'url(' + item.photo + ')'"></div>
+            <div class="grid__name">{{item.name}}</div>
+          </a>
+        </div>
       </div>
     </div>
   </div>

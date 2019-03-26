@@ -2,7 +2,7 @@ import {LOCALE_ID, NgModule} from '@angular/core';
 import {CommonModule, registerLocaleData} from '@angular/common';
 import {RouterModule} from '@angular/router';
 import {ProductsRepository} from './repositories/products.repository';
-import {StoreResolver} from './resolvers/store.resolver';
+import {StoresResolver} from './resolvers/stores.resolver';
 import {CatalogComponent} from './pages/catalog/catalog.component';
 import {CartIconComponent} from './components/cart-icon/cart-icon.component';
 import {Cart} from './models/cart.model';
@@ -36,6 +36,14 @@ import {CategoryStaticDataSource} from './datasource/category-static.datasource'
 import {CategoriesRepository} from './repositories/categories.repository';
 import {CategoriesResolver} from './resolvers/categories.resolver';
 import { SearchStringComponent } from './components/search-string/search-string.component';
+import { CategoryComponent } from './pages/category/category.component';
+import {CategoryResolver} from './resolvers/category.resolver';
+import {StoreRepository} from './repositories/store.repository';
+import {StoreDataSourcing} from './datasource/store.datasourcing';
+import {StoreStaticDataSource} from './datasource/store-static.datasource';
+import {CategoryStoresResolver} from './resolvers/category-stores.resolver';
+import {ProductsResolver} from './resolvers/products.resolver';
+import {StoreResolver} from './resolvers/store.resolver';
 
 registerLocaleData(localeRu);
 
@@ -46,9 +54,20 @@ const routing = RouterModule.forChild([
     resolve: {categories: CategoriesResolver},
   },
   {
+    path: 'category/:id',
+    component: CategoryComponent,
+    resolve: {
+      category: CategoryResolver,
+      stores: CategoryStoresResolver
+    }
+  },
+  {
     path: 'catalog/:id',
     component: CatalogComponent,
-    resolve: { store: StoreResolver }
+    resolve: {
+      groups: ProductsResolver,
+      store: StoreResolver,
+    }
   },
   {
     path: 'cart',
@@ -80,6 +99,7 @@ const routing = RouterModule.forChild([
     SuccessComponent,
     CategoriesComponent,
     SearchStringComponent,
+    CategoryComponent,
   ],
   imports: [
     CommonModule,
@@ -93,7 +113,7 @@ const routing = RouterModule.forChild([
   ],
   providers: [
     ProductsRepository,
-    StoreResolver,
+    StoresResolver,
     Cart,
     FilledCartGuard,
     LastStoreService,
@@ -101,6 +121,11 @@ const routing = RouterModule.forChild([
     OrderRepository,
     CategoriesRepository,
     CategoriesResolver,
+    CategoryResolver,
+    StoreRepository,
+    CategoryStoresResolver,
+    StoreResolver,
+    ProductsResolver,
     {
       provide: ProductDataSourcing,
       useClass: ProductStaticDataSource,
@@ -120,6 +145,10 @@ const routing = RouterModule.forChild([
     {
       provide: CategoryDataSourcing,
       useClass: CategoryStaticDataSource,
+    },
+    {
+      provide: StoreDataSourcing,
+      useClass: StoreStaticDataSource,
     }
   ]
 })

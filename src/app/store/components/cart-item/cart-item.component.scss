@@ -13,8 +13,8 @@
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
-    height: calc(100vh - 600px);
     border-radius: 10px;
+    padding-top: 113%;
   }
 
   &__name {
@@ -55,10 +55,6 @@
 
 @media screen and (max-width: $sizeDesktop) {
   .cart-item {
-    &__image {
-      height: calc(100vh - 530px);
-    }
-
     &__name {
       font-size: 25px;
       margin: 20px 0;

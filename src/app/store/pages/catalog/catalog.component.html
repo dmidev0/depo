@@ -20,7 +20,7 @@
     </div>
     <div class="catalog__list">
       <ng-scrollbar class="catalog__scrollbar">
-        <div class="catalog__item" *ngFor="let group of store.groups">
+        <div class="catalog__item" *ngFor="let group of groups">
           <div class="catalog__category">
             <h2 class="catalog__category-name" (click)="toggleCategory(group.category)">{{group.category}}</h2>
             <svg class="catalog__category-arrow"
