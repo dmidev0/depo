@@ -35,6 +35,7 @@ import {CategoryDataSourcing} from './datasource/category.datasourcing';
 import {CategoryStaticDataSource} from './datasource/category-static.datasource';
 import {CategoriesRepository} from './repositories/categories.repository';
 import {CategoriesResolver} from './resolvers/categories.resolver';
+import { SearchStringComponent } from './components/search-string/search-string.component';
 
 registerLocaleData(localeRu);
 
@@ -78,6 +79,7 @@ const routing = RouterModule.forChild([
     OrderComponent,
     SuccessComponent,
     CategoriesComponent,
+    SearchStringComponent,
   ],
   imports: [
     CommonModule,

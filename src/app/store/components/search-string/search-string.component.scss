@@ -1,0 +1,46 @@
+@import "../../styles/common";
+
+.search-string {
+  margin-bottom: 63px;
+  @extend %_container;
+
+  &__container {
+    border-bottom: 1px solid #808080;
+    padding: 0 50px;
+    position: relative;
+  }
+
+  &__input {
+    background: none;
+    width: 100%;
+    border: none;
+    color: #fff;
+    font-size: 42px;
+    padding: 10px 0;
+  }
+
+  &__submit {
+    position: absolute;
+    right: 0;
+    top: 20px;
+  }
+
+  &__icon {
+    position: absolute;
+    left: 0;
+    top: 15px;
+  }
+
+  ::-webkit-input-placeholder {
+    font-size: 14px;
+  }
+  ::-moz-placeholder {
+    font-size: 14px;
+  }
+  :-ms-input-placeholder {
+    font-size: 14px;
+  }
+  :-moz-placeholder {
+    font-size: 14px;
+  }
+}

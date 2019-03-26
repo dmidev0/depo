@@ -2,7 +2,9 @@
 
 .store-header {
   color: #fff;
-  padding: 48px 82px 48px 55px;
+  @extend %_container;
+  padding-top: 48px;
+  padding-bottom: 48px;
   display: flex;
   justify-content: space-between;
   align-items: center;

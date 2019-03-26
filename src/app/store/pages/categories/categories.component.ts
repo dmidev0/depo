@@ -17,4 +17,9 @@ export class CategoriesComponent {
     this.categories = activatedRoute.snapshot.data.categories;
     this.filtered = this.categories.slice();
   }
+
+  filter(query) {
+    this.filtered = this.categories.filter(c =>
+      c.name.toLowerCase().includes(query.toLowerCase()));
+  }
 }

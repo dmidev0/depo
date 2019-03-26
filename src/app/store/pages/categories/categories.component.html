@@ -1,5 +1,6 @@
 <div class="categories">
   <app-store-header [title]="'Категории'"></app-store-header>
+  <app-search-string (changed)="filter($event)"></app-search-string>
   <div class="categories__content">
     <div class="categories__list">
       <div class="categories__item" *ngFor="let item of filtered">
