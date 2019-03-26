@@ -1,20 +1,21 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {IndexComponent} from './index/index.component';
+// import {IndexComponent} from './index/index.component';
+import {storeRoutes} from './store/store-routing.module';
 
 const routes: Routes = [
-  {
-    path: '',
-    pathMatch: 'full',
-    component: IndexComponent,
-  },
+  // {
+  //   path: '',
+  //   pathMatch: 'full',
+  //   component: IndexComponent,
+  // },
   {
     path: 'store',
-    loadChildren: './store/store.module#StoreModule'
+    children: storeRoutes,
   },
   {
     path: '**',
-    redirectTo: ''
+    redirectTo: '/store/categories'
   }
 ];
 
