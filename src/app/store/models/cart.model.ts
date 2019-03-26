@@ -55,6 +55,14 @@ export class Cart {
     return this.lines;
   }
 
+  getInfo() {
+    return {
+      count: this.itemCount,
+      price: this.cartPrice,
+      lines: this.lines,
+    };
+  }
+
   private recalculate() {
     this.itemCount = 0;
     this.cartPrice = 0;

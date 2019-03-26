@@ -18,7 +18,6 @@ export class CatalogComponent implements AfterViewInit {
   constructor(private activatedRoute: ActivatedRoute, lastStoreService: LastStoreService) {
     this.store = activatedRoute.snapshot.data.store;
     this.groups = activatedRoute.snapshot.data.groups;
-    console.log(this.groups);
     lastStoreService.setStore(this.store.slug);
   }
 

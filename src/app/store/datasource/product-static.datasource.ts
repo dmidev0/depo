@@ -125,7 +125,6 @@ export class ProductStaticDataSource extends ProductDataSourcing {
 
   getByStoreSlug(storeSlug: string): Observable<Product[]> {
     const products = this.products.filter(p => p.store === storeSlug);
-    console.log(storeSlug, products);
     return of(products);
   }
 }

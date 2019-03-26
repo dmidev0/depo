@@ -14,3 +14,10 @@ export class Order {
     this.cart.clear();
   }
 }
+
+export interface OrderRequest {
+  id?: number;
+  phone: number;
+  paymentType: string;
+  cart: any;
+}
