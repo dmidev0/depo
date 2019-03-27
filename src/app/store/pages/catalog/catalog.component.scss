@@ -75,7 +75,7 @@ $catalogBgWidth: 51%;
     top: 0;
     left: 0;
     width: 100%;
-    padding: 30px 48px 30px 90px;
+    padding: 30px 66px 30px 90px;
   }
 
   &__close {
@@ -120,7 +120,7 @@ $catalogBgWidth: 51%;
       width: 28px;
       height: 28px;
       position: absolute;
-      right: 1px;
+      right: 20px;
       top: 50%;
       transform: translateY(-50%) scaleY(-1);
       cursor: pointer;
